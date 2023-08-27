@@ -1,7 +1,7 @@
 import {parse} from 'csv-parse';
 import fs from 'fs';
 
-const results = [];
+const habitablePlanets = [];
 
 const parser = parse({
     columns: true,
@@ -21,15 +21,19 @@ fs.createReadStream('./data/kepler_data.csv')
     .pipe(parser)
     .on('data', (planet) => {
         if(isHabitible(planet)){
-            results.push(planet)
+            habitablePlanets.push(planet)
         }
     })
     .on('error', (error) => {
         console.error(error)
     })
     .on('end', () => {
-        console.log('results', results)
-        console.log(`Potentially habitible planets: ${results.length}`)
+        console.log('Potentially habitable planets', habitablePlanets.map(planet => {
+            return ({
+                name: planet?.kepler_name
+            })
+        }))
+        console.log(`# of planets: ${habitablePlanets.length}`)
     })
 
 
