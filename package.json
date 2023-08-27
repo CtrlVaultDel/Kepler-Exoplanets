@@ -1,0 +1,15 @@
+{
+  "name": "kepler",
+  "version": "1.0.0",
+  "description": "Displays static data derived from the Kepler Telescope",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ryan DeVault",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
