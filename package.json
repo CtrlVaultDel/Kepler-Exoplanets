@@ -2,7 +2,7 @@
   "name": "kepler",
   "version": "1.0.0",
   "description": "Displays static data derived from the Kepler Telescope",
-  "main": "index.js",
+  "main": "index.mjs",
   "scripts": {
     "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
